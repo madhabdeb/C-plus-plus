@@ -1,0 +1,1094 @@
+
+<!-- saved from url=(0041)http://csci.csusb.edu/dick/cs202/stl.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>CS202:
+The C++ Standard Library
+</title>
+<style type="text/css">
+BODY{font-family:serif;}
+H1,H2,H3,H4{font-family:sans-serif;}
+CODE,PRE,TT{font-family:monospace;}
+HR{color: black;}
+A{ font-weight: bolder; }
+.InlineFormula{
+	font-style: italic;
+}
+.Formula{
+	padding-left:10px;
+	font-style: italic;
+}
+.Let{
+	border-style: solid;
+	padding:10px;
+	border-width:thin;
+}
+.Net{
+	border-style: solid;
+	padding:10px;
+	border-width:thin;
+	border-color:red;
+}
+.Case{
+	border-style: solid;
+	padding:10px;
+	border-width:thin;
+	border-color:blue;
+}
+</style>
+</head>
+<body bgcolor="#FFFFFB" link="#0000FF" alink="#FF0000" vlink="#8000AF">
+<!-- Generated from MATHS source code by RJBotting\'s mth2html script-->
+<form method="get" action="http://cse.csusb.edu/dick/cs202/lookup.php">
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Main Content">Skip Navigation</a>] 
+[<a href="http://www.csusb.edu/">CSUSB</a>]
+/ [<a href="http://nsci.csusb.edu/">CNS</a>]
+/ [<a href="http://cse.csusb.edu/">CSE</a>]
+/ [<a href="http://cse.csusb.edu/dick/">R J Botting</a>]
+/ [<a href="http://cse.csusb.edu/dick/cs202/">CSci202</a>]
+/ 
+stl
+<br>
+ [<a href="http://cse.csusb.edu/dick/cs202/stl.txt">Text Version</a>] 
+ [<a href="http://cse.csusb.edu/dick/cs202/syllabus.html">Syllabus</a>] 
+ [<a href="http://cse.csusb.edu/dick/cs202/schedule.html">Schedule</a>] 
+ [<a href="http://cse.csusb.edu/dick/cs202/glossary.html">Glossary</a>] 
+ [<a href="http://cse.csusb.edu/dick/cs202/resources.html">Resources</a>] 
+ [<a href="http://cse.csusb.edu/dick/cs202/grading/">Grading</a>] 
+ [<a href="http://cse.csusb.edu/dick/cs202/contact.html">Contact</a>] 
+[<a target="body" href="http://cse.csusb.edu/dick/cs202/question.html">Question</a>]
+ [Search <input name="search" size="10" value="">
+<input type="hidden" name="from" value="cs202/stl.mth">
+<input type="submit" value="Go">]
+<br>
+ Notes: 
+[<a href="http://cse.csusb.edu/dick/cs202/01.html">01</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/02.html">02</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/03.html">03</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/04.html">04</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/05.html">05</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/06.html">06</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/07.html">07</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/08.html">08</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/09.html">09</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/10.html">10</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/11.html">11</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/12.html">12</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/13.html">13</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/14.html">14</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/15.html">15</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/16.html">16</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/17.html">17</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/18.html">18</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/19.html">19</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/20.html">20</a>]
+<br>Labs: 
+[<a href="http://cse.csusb.edu/dick/cs202/lab01.html">01</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab02.html">02</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab03.html">03</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab04.html">04</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab05.html">05</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab06.html">06</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab07.html">07</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab08.html">08</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab09.html">09</a>]
+[<a href="http://cse.csusb.edu/dick/cs202/lab10.html">10</a>]
+<br>
+Thu Jun 16 15:28:46 PDT 2011
+</form>
+<h3><a name="Contents">Contents</a></h3>
+<ul class="Contents">
+<li><a href="http://csci.csusb.edu/dick/cs202/stl.html#The C++ Standard Library">The C++ Standard Library</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Quick Reference">: Quick Reference</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Also See">: Also See</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Vectors">: Vectors</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Stacks">: Stacks</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Queues">: Queues</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Deques">: Deques</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Lists">: Lists</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Containers">: Containers</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">: Iterators</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Pairs">: Pairs</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Maps and Sets">: Maps and Sets</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Strings and Streams">: Strings and Streams</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Algorithms">: Algorithms</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#More">: More</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Errors">: Errors</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#See Also">: See Also</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Notes">Notes</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Glossary">Glossary</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Acknowledgements">Acknowledgements</a>
+</li><li><a href="http://csci.csusb.edu/dick/cs202/stl.html#Glossary">Glossary</a>
+</li></ul><a name="Main Content"><hr></a><ol>
+<h1><a name="The C++ Standard Library">The C++ Standard Library</a></h1><ol class="Section">
+This is a short primer on a powerful new set of libraries
+for the C++ language.
+The official terminology (circa 1998) is to talk about
+the "Standard Library" (or SL).  One of the special features of this
+"SL" is the use of templates (<a href="http://csci.csusb.edu/dick/cs202/stl.html#template">template</a>) and so the older nickname "<a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a>"
+(Standard Template Library)
+is still(1999) in use by most programmers.  I will use the abbreviation
+"STL" for
+a collection C++ libraries that allow you to use
+many well known data structures with out having to program
+them.  They are designed so that the code runs efficiently.  The compiler
+does most of the work of generating efficient implementations.
+It allows us to produce programs using the data structures discovered by
+computer scientist without going through the effort of developing the
+code for them each time.
+<p>
+These are designed to be general, efficient, and powerful rather than easy
+to use.  Some of them allow you to easily access items inside the data
+structure, one at a time.  To help you do this C++ has <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a>.  An
+iterator
+is a kind of generalized subscript.  An iterator
+selects one item in a data structure.  An iterator can be moved to
+different items in the structure.
+</p><p>
+The C++ library also has a large number of useful <a href="http://csci.csusb.edu/dick/cs202/stl.html#Algorithms">Algorithms</a>.  These are
+designed to make it quick to create programs that do well known
+procedures efficiently.
+</p><p>
+</p><h2><a name="Quick Reference">Quick Reference</a></h2>
+Here is an alphabetical list of the most useful libraries.
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">#include</th><th scope="col">Description[See]
+</th></tr><tr><td>&lt;algorithm&gt;</td><td>ready-to-use functions that manipulate containers of all types
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Algorithms"> Algorithms </a>]
+</td></tr><tr><td>&lt;bitset&gt;</td><td>A subset of of a fixed and small set of items
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#More"> More </a>]
+</td></tr><tr><td>&lt;<a href="http://csci.csusb.edu/dick/cs202/stl.html#deque">deque</a>&gt; </td><td>Double Ended Queue with <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a> at both ends plus indexing.
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#More"> More </a>]
+</td></tr><tr><td>&lt;<a href="http://csci.csusb.edu/dick/cs202/stl.html#list">list</a>&gt;</td><td>A randomly changing sequence of items
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Lists"> Lists </a>]
+</td></tr><tr><td>&lt;<a href="http://csci.csusb.edu/dick/cs202/stl.html#map">map</a>&gt;</td><td>An collection of pairs of items indexed and ordered by the first one
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Maps and Sets"> Maps and Sets </a>]
+</td></tr><tr><td>&lt;<a href="http://csci.csusb.edu/dick/cs202/stl.html#queue">queue</a>&gt;</td><td>A Sequence of items with <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a> at opposite ends
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Queues"> Queues </a>]
+</td></tr><tr><td>&lt;<a href="http://csci.csusb.edu/dick/cs202/stl.html#set">set</a>&gt;</td><td>An ordered collection of items
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Maps and Sets"> Maps and Sets </a>]
+</td></tr><tr><td>&lt;<a href="http://csci.csusb.edu/dick/cs202/stl.html#stack">stack</a>&gt;</td><td>A sequence of items with <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a> at one end only
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Stacks"> Stacks </a>]
+</td></tr><tr><td>&lt;utility&gt;</td><td>Defines what a <a href="http://csci.csusb.edu/dick/cs202/stl.html#pair">pair</a> is and some other simple classes.
+</td></tr><tr><td>&lt;<a href="http://csci.csusb.edu/dick/cs202/stl.html#vector">vector</a>&gt;</td><td>A dynamic array
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Vectors"> Vectors </a>]
+</td></tr></tbody></table><br>(Close Table)<br>
+Here is a table of some data structures in the <a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a> and what you can do to them:
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Name</th><th scope="col">Properties</th><th scope="col">Insert/Delete</th><th scope="col">Other Operators</th><th scope="col">Assignment/copy
+</th></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#stack">stack</a></td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a>(),<a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a>(T)</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#top">top</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#queue">queue</a></td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a>(),<a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a>(T)</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#vector">vector</a></td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#push_back">push_back</a>(T), <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop_back">pop_back</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a>[<a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>], <a href="http://csci.csusb.edu/dick/cs202/stl.html#at">at</a>(<a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>)[see <a href="http://csci.csusb.edu/dick/cs202/stl.html#note1">note1</a>],  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a></td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#deque">deque</a></td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#push_back">push_back</a>(T), <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop_back">pop_back</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#push_front">push_front</a>(T), <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop_front">pop_front</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a>[<a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>], </td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#list">list</a></td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#push_back">push_back</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop_back">pop_back</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#push_front">push_front</a>(T), <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop_front">pop_front</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#insert">insert</a>(...), <a href="http://csci.csusb.edu/dick/cs202/stl.html#erase">erase</a>(...)
+</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a>(), sort(), clear(), reverse(), merge(l), <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a>,
+</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#string">string</a></td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), length()</td><td>-</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a>[<a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>], substr, +(concatenate), <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a>, </td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#map">map</a>, multimap</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>()</td><td>-</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a>[key_type], find(...), count(...), <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a>, </td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr><tr><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#set">set</a>, multiset</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>(), <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>()</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#insert">insert</a>(...), <a href="http://csci.csusb.edu/dick/cs202/stl.html#erase">erase</a>(...)</td><td>find(...), count(...), <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a>,
+</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> =
+</td></tr></tbody></table><br>(Close Table)<br>
+<h2><a name="Also See">Also See</a></h2>
+[<a href="http://www.linuxsoftware.co.nz/cppcontainers.html"> cppcontainers.html </a>]
+(New Zealand).
+<h2><a name="Vectors">Vectors</a></h2><ol class="Section">
+Vectors are good when we have an unknown sequence of items to store
+and we want to access them by their sequence numbers.  They can have
+items added and removed at their ends only.  They are therefore like a
+special kind of stack where the items inside the stack can be accessed
+but not inserted or deleted.
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Code
+</th></tr><tr><td>To be able to use <a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a> vectors
+</td><td>#include &lt;vector&gt;
+</td></tr><tr><td>To declare an empty vector of items with type T.
+</td><td>vector&lt;T&gt; v;
+</td></tr><tr><td>To declare a vector of n items with type T.
+</td><td>vector&lt;T&gt; v(n);
+</td></tr><tr><td>test to see if <span class="InlineFormula">v</span> is empty:
+</td><td>v.empty()
+</td></tr><tr><td>find how many items are in <span class="InlineFormula">v</span>:
+</td><td>v.size()
+</td></tr><tr><td>push <span class="InlineFormula">t</span> in <span class="InlineFormula">T</span> onto the end of <span class="InlineFormula">v</span>:
+</td><td>v.push_back(t)
+</td></tr><tr><td>pop the back of <span class="InlineFormula">v</span> off <span class="InlineFormula">v</span>:
+</td><td>v.pop_back()
+</td></tr><tr><td>get the front item of <span class="InlineFormula">v</span>:
+</td><td>v.front()
+</td></tr><tr><td>change the front item:
+</td><td>v.front() = expression;
+</td></tr><tr><td>get the back item of v:
+</td><td>v.back()
+</td></tr><tr><td>change the back item:
+</td><td>v.back() = expression;
+</td></tr><tr><td>Access the <span class="InlineFormula">i</span>'th item (0&lt;=<span class="InlineFormula">i</span>&lt;size()) without checking to see if it exists:
+</td><td>v[i]
+</td></tr><tr><td>Assign a copy of <span class="InlineFormula">v1</span> to <span class="InlineFormula">v</span>:
+</td><td>v = v1
+</td></tr><tr><td>Sorting and operating on all items efficiently
+</td><td>see <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a> below.
+</td></tr></tbody></table><br>(Close Table)<br>
+For an introduction to vectors see
+[<a href="http://cse.csusb.edu/dick/cs202/vectors.html"> vectors.html </a>]
+</ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#Vectors">Vectors</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><h2><a name="Stacks">Stacks</a></h2><ol class="Section">
+Stacks are only accessed at one end.  We call the accessible end the top.
+They are useful for calculators, compilers, and any time we want to
+reverse a sequence of items.
+<pre> 	void reverse(string &amp; x)</pre>
+<pre> 	{</pre>
+<pre> 		stack&lt;char&gt; s; //creates empty stack of characters</pre>
+<pre>    	//Put characters from x onto the stack</pre>
+<pre> 		   for(int i=0; i&lt;x.length(); ++i)</pre>
+<pre> 			s.push(x[i]);</pre>
+<pre>    	//take characters off of stack and put them back into x</pre>
+<pre> 		   for(int i=0; !s.empty(); ++i, s.pop())</pre>
+<pre> 			x[i]=s.top();</pre>
+<pre> 	}</pre>
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Code
+</th></tr><tr><td>To use stacks
+</td><td>#include &lt;stack&gt;
+</td></tr><tr><td>Declare an empty stack of items of type T
+</td><td>stack&lt;T&gt; s;
+</td></tr><tr><td>test to see if <span class="InlineFormula">s</span> is empty:
+</td><td>s.empty()
+</td></tr><tr><td>find how many items are in <span class="InlineFormula">s</span>:
+</td><td>s.size()
+</td></tr><tr><td>push a <span class="InlineFormula">t</span> of type <span class="InlineFormula">T</span> onto the top:
+</td><td>s.push(t)
+</td></tr><tr><td>pop the top off <span class="InlineFormula">s</span>:
+</td><td>s.pop()
+</td></tr><tr><td>get the top item of <span class="InlineFormula">s</span>
+</td><td>s.top()
+</td></tr><tr><td>change the top item:
+</td><td>s.top() = expression;
+</td></tr></tbody></table><br>(Close Table)<br>
+Note: You may meet a compiler with the draft version of the <a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a>, see
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Errors"> Errors </a>]
+below.
+</ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#Stacks">Stacks</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><h2><a name="Queues">Queues</a></h2><ol class="Section">
+Queues allow data to be added at one end and taken out of the other end.
+<pre> 		// A simple example of putting three items into a queue and</pre>
+<pre> 		// then taking them off the queue.</pre>
+<pre> 		#include &lt;iostream&gt;</pre>
+<pre> 		#include &lt;queue&gt;</pre>
+<pre></pre>
+<pre> 		int main()</pre>
+<pre> 		{</pre>
+<pre> 			queue&lt;char&gt; q;</pre>
+<pre></pre>
+<pre> 			q.push('a');</pre>
+<pre> 			q.push('b');</pre>
+<pre> 			q.push('c');</pre>
+<pre></pre>
+<pre> 			cout &lt;&lt; q.front();</pre>
+<pre> 			q.pop();</pre>
+<pre></pre>
+<pre> 			cout &lt;&lt; q.front();</pre>
+<pre> 			q.pop();</pre>
+<pre></pre>
+<pre> 			cout &lt;&lt; q.front();</pre>
+<pre> 			q.pop();</pre>
+<pre> 		}</pre>
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Code
+</th></tr><tr><td>To be able to use STL Queues
+</td><td>#include &lt;queue&gt;
+</td></tr><tr><td>To declare an empty queue of items of type T
+</td><td>queue&lt;T&gt; q;
+</td></tr><tr><td>test to see if <span class="InlineFormula">q</span> is empty:
+</td><td>q.empty()
+</td></tr><tr><td>find how many items are in <span class="InlineFormula">q</span>:
+</td><td>q.size()
+</td></tr><tr><td>push a <span class="InlineFormula">t</span>:<span class="InlineFormula">T</span> onto the end of <span class="InlineFormula">q</span>:
+</td><td>q.push(t)
+</td></tr><tr><td>remove the front from <span class="InlineFormula">q</span>:
+</td><td>q.pop()
+</td></tr><tr><td>get the front item of <span class="InlineFormula">q</span>:
+</td><td>q.front()
+</td></tr><tr><td>change the front item:
+</td><td>q.front() = expression;
+</td></tr><tr><td>get the back item of <span class="InlineFormula">q</span>:
+</td><td>q.back()
+</td></tr><tr><td>change the back item:
+</td><td>q.back() = expression;
+</td></tr></tbody></table><br>(Close Table)<br>
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Errors"> Errors </a>]
+below.
+If the above does not work on your system try:
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Older Queues"> Older Queues </a>]
+below.
+</ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#Queues">Queues</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><h2><a name="Deques">Deques</a></h2>
+A deque is a Double Ended QUEu -- pronounced "deck".  You can push and pop
+both front and back (like a list) and you can access items inside it(like a
+vector).  A deque combines the operations of a <a href="http://csci.csusb.edu/dick/cs202/stl.html#list">list</a> and a <a href="http://csci.csusb.edu/dick/cs202/stl.html#vector">vector</a>. But being
+a Jack-of-all-trades it may be slower than the more specific contianers.
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Code
+</th></tr><tr><td>To be able to use <a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a> deques
+</td><td>#include &lt;deque&gt;
+</td></tr><tr><td>To declare an empty deque of items of type T
+</td><td>deque&lt;T&gt; l;
+</td></tr><tr><td>test to see if <span class="InlineFormula">l</span> is empty:
+</td><td>l.empty()
+</td></tr><tr><td>find how many items are in <span class="InlineFormula">l</span>:
+</td><td>l.size()
+</td></tr><tr><td>push a <span class="InlineFormula">t</span>:<span class="InlineFormula">T</span> onto the end of <span class="InlineFormula">l</span>:
+</td><td>l.push_back(t)
+</td></tr><tr><td>pop the last off <span class="InlineFormula">l</span>:
+</td><td>l.pop_back()
+</td></tr><tr><td>push a <span class="InlineFormula">t</span>:<span class="InlineFormula">T</span> onto the start of <span class="InlineFormula">l</span>:
+</td><td>l.push_front(t)
+</td></tr><tr><td>pop the front of <span class="InlineFormula">l</span> off <span class="InlineFormula">l</span>:
+</td><td>l.pop_front()
+</td></tr><tr><td>get the front item of <span class="InlineFormula">l</span>:
+</td><td>l.front()
+</td></tr><tr><td>change the front item:
+</td><td>l.front() = expression;
+</td></tr><tr><td>get the back item of <span class="InlineFormula">l</span>:
+</td><td>l.back()
+</td></tr><tr><td>change the back item:
+</td><td>l.back() = expression;
+</td></tr><tr><td>Access the <span class="InlineFormula">i</span>'th item (0&lt;=<span class="InlineFormula">i</span>&lt;size()) without checking to see if it exists:
+</td><td>v[i]
+</td></tr><tr><td>Assign a copy of <span class="InlineFormula">q1</span> to <span class="InlineFormula">q</span>:
+</td><td>q = q1
+</td></tr><tr><td>Insert and erase items inside a Deque(slow)
+</td><td>
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Insert and Delete"> Insert and Delete </a>]
+below.
+</td></tr><tr><td>Efficiently visit each item in turn
+</td><td>see <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a> below.
+</td></tr></tbody></table><br>(Close Table)<br>
+<h2><a name="Lists">Lists</a></h2><ol class="Section">
+Lists are good when data needs to be reorganized after it has been stored.  They
+waste space if you only need to change the ends of the list.  You can
+not access them using an <a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>.  If you want to do <a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a> items use a <a href="http://csci.csusb.edu/dick/cs202/stl.html#Vectors">Vectors</a> or
+<a href="http://csci.csusb.edu/dick/cs202/stl.html#Deques">Deques</a>.
+<p>
+Here is an example:
+</p><pre> //Using a list to sort a sequence of 9 numbers.</pre>
+<pre> #include &lt;iostream&gt;</pre>
+<pre> #include &lt;list&gt;</pre>
+<pre> void print(list&lt;int&gt; a);//utility function print lists of ints</pre>
+<pre></pre>
+<pre> int main()</pre>
+<pre> {</pre>
+<pre> 	list&lt;int&gt; a;</pre>
+<pre>  //Put 9,8,7,6,5,4,3,2,1 onto the list</pre>
+<pre> 	for(int i=0; i&lt;9;++i)</pre>
+<pre> 		a.push_back(9-i);// put new element after all the others</pre>
+<pre> 	print(a); //here the list contains (9,8,7,6,5,4,3,2,1)</pre>
+<pre> 	a.sort();//in the &lt;list&gt; library!</pre>
+<pre> 	print(a); //here the list contains (1,2,3,4,5,6,7,8,9)</pre>
+<pre> }</pre>
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Code
+</th></tr><tr><td>To be able to use <a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a> lists
+</td><td>#include &lt;list&gt;
+</td></tr><tr><td>To declare an empty list of items of type T
+</td><td>list&lt;T&gt; l;
+</td></tr><tr><td>test to see if <span class="InlineFormula">l</span> is empty:
+</td><td>l.empty()
+</td></tr><tr><td>find how many items are in <span class="InlineFormula">l</span>:
+</td><td>l.size()
+</td></tr><tr><td>push a <span class="InlineFormula">t</span>:<span class="InlineFormula">T</span> onto the end of <span class="InlineFormula">l</span>:
+</td><td>l.push_back(t)
+</td></tr><tr><td>pop the last off <span class="InlineFormula">l</span>:
+</td><td>l.pop_back()
+</td></tr><tr><td>push a <span class="InlineFormula">t</span>:<span class="InlineFormula">T</span> onto the start of <span class="InlineFormula">l</span>:
+</td><td>l.push_front(t)
+</td></tr><tr><td>pop the front of <span class="InlineFormula">l</span> off <span class="InlineFormula">l</span>:
+</td><td>l.pop_front()
+</td></tr><tr><td>get the front item of <span class="InlineFormula">l</span>:
+</td><td>l.front()
+</td></tr><tr><td>change the front item:
+</td><td>l.front() = expression;
+</td></tr><tr><td>get the back item of <span class="InlineFormula">l</span>:
+</td><td>l.back()
+</td></tr><tr><td>change the back item:
+</td><td>l.back() = expression;
+</td></tr><tr><td>Sort the list:
+</td><td>l.sort()
+</td></tr><tr><td>Clear the list:
+</td><td>l.clear()
+</td></tr><tr><td>Merge a sorted list into a sorted list:
+</td><td>l.merge(list_of_sorted_elements)
+</td></tr><tr><td>Reverse the list:
+</td><td>l.reverse()
+</td></tr><tr><td>Assign a copy of <span class="InlineFormula">q1</span> to <span class="InlineFormula">q</span>:
+</td><td>q = q1
+</td></tr><tr><td>Insert and delete items inside a List
+</td><td>
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Insert and Delete"> Insert and Delete </a>]
+below.
+</td></tr><tr><td>Efficiently visit each item in turn
+</td><td>see <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a> below.
+</td></tr></tbody></table><br>(Close Table)<br>
+<h3><a name="Splicing">Splicing</a></h3>
+Given iterators it is often simple and efficient to reorganize
+a list by splicing ranges from one container to another.
+See <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a> below.
+Thus <span class="InlineFormula">splice</span> is a generic <a href="http://csci.csusb.edu/dick/cs202/stl.html#algorithm">algorithm</a> that most people don't know about.
+<p>
+For example if <span class="InlineFormula">iterator1</span> refers to a place in <span class="InlineFormula">list1</span> and <span class="InlineFormula">iterator2</span> to
+an element in <span class="InlineFormula">list2</span> before this command:
+</p><pre> 		list1.splice(iterator1, list2, iterator2);</pre>
+then the <span class="InlineFormula">iterator2</span> item will be moved inside <span class="InlineFormula">list1</span> afterwards.
+The iterators become invalid.
+</ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#Lists">Lists</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><p>
+</p><h2><a name="Containers">Containers</a></h2>
+<a href="http://csci.csusb.edu/dick/cs202/stl.html#Lists">Lists</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#Vectors">Vectors</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#Stacks">Stacks</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#Queues">Queues</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#Deques">Deques</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#Sets">Sets</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#Maps">Maps</a>, etc.
+are all <a href="http://csci.csusb.edu/dick/cs202/stl.html#Containers">Containers</a>.
+A container is a data structure that holds a number of
+objects of the same type or class.  The oldest example of a Container an
+array.  Some of the features of modern containers
+are partly inspired by arrays.  Here is a simple example:
+<pre> 	const int max = 10;</pre>
+<pre> 	float a[max];</pre>
+<pre> 	...</pre>
+<pre> 	for(int i=0; i&lt;max; ++i)</pre>
+<pre> 		process(a[i]);</pre>
+<pre> 	...</pre>
+Here is what must be done if the size of an array is determined
+at run time rather than at compile time:
+<pre> 	int max;</pre>
+<pre> 	...</pre>
+<pre> 	float * a;</pre>
+<pre> 	a= new float[max];</pre>
+<pre> 	...</pre>
+<pre> 	for(int i=0; i&lt;max; ++i)</pre>
+<pre> 		process(a[i]);</pre>
+<pre> 	...</pre>
+<pre> 	delete []a;</pre>
+Arrays are a <span class="InlineFormula">primitive</span> data structures.
+Once declared they stay the same size: no popping or pushing!
+No insert or erase.
+They can be accessed by using a subscript, and this
+access is extremely fast.  There is
+no test for emptiness or a function to find their size!  However there is
+a tricky expression you can use:
+<pre> 		sizeof(array)/sizeof(array[0])</pre>
+There
+is no test to see if the item you ask for exists.  Programs can
+easily crash themselves or the operating system by manipulating nonexistent
+array items.
+<p>
+C arrays were designed so that they could be accessed by
+using a variable that stores the address of an item.  These
+variables are called <a href="http://csci.csusb.edu/dick/cs202/stl.html#pointers">pointers</a>.  They are used like this
+</p><pre> 	for(float *p=a; p!=a+max; ++p)</pre>
+<pre> 		process(*p);</pre>
+<pre> 	...</pre>
+<p>
+</p><h2><a name="Iterators">Iterators</a></h2><ol class="Section">
+Items in  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Containers">Containers</a> are referred to by special objects called
+<a href="http://csci.csusb.edu/dick/cs202/stl.html#iterators">iterators</a>.  An iterator is a kind of sticky note that you can attach
+to an item in a container to remember where it is.  The container is
+like a book.  Iterators are like sticky notelets.
+<p>
+C++ iterators have syntax based on C pointers.  For any serial container
+<span class="InlineFormula">c</span> you process all the items by writing:
+</p><pre> 	for( p=c.begin(); p!=c.end(); ++p)</pre>
+<pre> 		process(*p);</pre>
+For any type <span class="InlineFormula">T</span>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#list">list</a>&lt;<span class="InlineFormula">T</span>&gt;, <a href="http://csci.csusb.edu/dick/cs202/stl.html#vector">vector</a>&lt;<span class="InlineFormula">T</span>&gt;, <a href="http://csci.csusb.edu/dick/cs202/stl.html#set">set</a>&lt;<span class="InlineFormula">T</span>&gt;, etc. are <a href="http://csci.csusb.edu/dick/cs202/stl.html#Containers">Containers</a>.
+So for any type <span class="InlineFormula">T</span>, there are iterator classes called
+<pre> 		list&lt;T&gt;::iterator</pre>
+<pre> 		vector&lt;T&gt;::iterator</pre>
+<pre> 		set&lt;T&gt;::iterator</pre>
+All <a href="http://csci.csusb.edu/dick/cs202/stl.html#Containers">Containers</a> have one or more iterators.  Container
+class <span class="InlineFormula">C</span> has an iterator called
+<pre> 		C::iterator</pre>
+To declare an iterator <span class="InlineFormula">p</span> for <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> of type <span class="InlineFormula">C</span> use:
+<pre> 		C::iterator p;</pre>
+Iterators are often declared and initialized like this:
+<pre> 	list&lt;T&gt;::iterator p=c.begin();</pre>
+<pre> 	vector&lt;T&gt;::iterator p=c.begin();</pre>
+<pre> 	set&lt;T&gt;::iterator p=c.begin();</pre>
+To move an iterator to the next item in a container write
+<pre> 		++p;</pre>
+To see if an iterator has gone past the last item in <span class="InlineFormula">c</span> use this test:
+<pre> 		p != c.end();</pre>
+To see the item that <span class="InlineFormula">p</span> refers to use <span class="InlineFormula">*p</span>.
+<p>
+For <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> classes <span class="InlineFormula">C</span> of objects type <span class="InlineFormula">T</span> and any object <span class="InlineFormula">c</span> of type <span class="InlineFormula">C</span>:
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Code
+</th></tr><tr><td>Move iterator <span class="InlineFormula">p</span> onto the next object in <span class="InlineFormula">c</span>(if any!).
+</td><td>++p
+</td></tr><tr><td>Access the value selected by <span class="InlineFormula">p</span> in its container.
+</td><td>*p
+</td></tr><tr><td>To change the value selected by <span class="InlineFormula">p</span> in its container.
+</td><td>*p = expression
+</td></tr><tr><td>The iterator that refers to the first item in <span class="InlineFormula">c</span>
+</td><td>c.begin()
+</td></tr><tr><td>The iterator that refers to one beyond <span class="InlineFormula">c</span>.
+</td><td>c.end()
+</td></tr><tr><td>Test to see if iterator p has come to the end of container <span class="InlineFormula">c</span>:
+</td><td>p != c.end();
+</td></tr><tr><td>Make <span class="InlineFormula">p</span> refer to the same item as <span class="InlineFormula">p1</span>
+</td><td>p = p1;
+</td></tr></tbody></table><br>(Close Table)<br>
+For an example see <a href="http://csci.csusb.edu/dick/cs202/stl.html#print_vector">print_vector</a> below.
+</p><p>
+The names for containers and iterators are long winded. C and
+C++ have a way to define a short name for a complex data type.
+The statement
+</p><pre> 		typedef list&lt; int&gt; L;</pre>
+defines <span class="InlineFormula">L</span> to be short for <span class="InlineFormula">list&lt;int&gt;</span> and then
+<pre> 		typedef L::iterator LI;</pre>
+defines <span class="InlineFormula">LI</span> to be the type <span class="InlineFormula">list&lt;int&gt;::iterator</span>.
+<h3><a name="Insert and Delete">Insert and Delete</a></h3>
+Insertion and deletion of items at inside a List of elements is controlled
+by an iterator(see <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a> below for details).
+An iterator is like a Post-It note stuck to an item in a
+container.  It indicates our place, it can be moved, and it
+shows us where to do things.
+The same operations work on a <a href="http://csci.csusb.edu/dick/cs202/stl.html#deque">deque</a> -- but are not
+efficient.  Inserting and deleting general items
+are not permitted on vectors, stacks, and queues.
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Code
+</th></tr><tr><td>Insert item <span class="InlineFormula">x</span> into List <span class="InlineFormula">l</span> before item pointed at by iterator <span class="InlineFormula">p</span>
+</td><td>l.insert(p, x);
+</td></tr><tr><td>Erase the element pointed at by iterator <span class="InlineFormula">q</span> in List <span class="InlineFormula">l</span>
+</td><td>l.erase(q);
+</td></tr></tbody></table><br>(Close Table)<br>
+The following program shows how this works.
+<pre> 	#include &lt;iostream&gt;</pre>
+<pre> 	#include &lt;list&gt;</pre>
+<pre> 	void print(list &lt;char&gt; );// elsewhere</pre>
+<pre> 	main()</pre>
+<pre> 	{	list &lt;char&gt; l;</pre>
+<pre> 		l.push_back('o'); l.push_back('a'); l.push_back('t');</pre>
+<pre> 		print(l); // l is ('o', 'a', 't').</pre>
+<pre> 		list &lt;char&gt;::iterator p;</pre>
+<pre> 		p=l.begin();</pre>
+<pre> 		cout &lt;&lt;" "&lt;&lt; *p&lt;&lt;endl;  // p refers to the 'o' in ('o', 'a', 't')</pre>
+<pre> 		l.insert(p, 'c');</pre>
+<pre> 		// l is now ('c', 'o', 'a', 't') and p still refers to 'o'</pre>
+<pre> 		cout &lt;&lt;" "&lt;&lt; *p&lt;&lt;endl;</pre>
+<pre> 		print(l);</pre>
+<pre> 		l.erase(p);</pre>
+<pre> 		cout &lt;&lt;" "&lt;&lt; *p&lt;&lt;endl; // p refers to an 'o' but it is not in l!</pre>
+<pre> 		print(l);</pre>
+<pre> 		l.erase(l.begin()); //removes front of l</pre>
+<pre> 		print(l);</pre>
+<pre> 	}</pre>
+<h3><a name="Invalid Iterator">Invalid Iterator</a></h3>
+If an iterator refers to an item that is erased then the iterator is
+said to be <span class="InlineFormula">invalid</span>.  You dare not use it (in a *, ++, or a -- for
+instance) until it is given an item to point at.
+<h3><a name="Ranges">Ranges</a></h3>
+A pair of iterators can describe a <a href="http://csci.csusb.edu/dick/cs202/stl.html#range">range</a> of items in their <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a>.
+The items start with the first iterator in the <a href="http://csci.csusb.edu/dick/cs202/stl.html#range">range</a>.
+The <a href="http://csci.csusb.edu/dick/cs202/stl.html#range">range</a> includes all the following items up to <span class="InlineFormula">just before</span>
+the item referred to by the last iterator of the pair.  For
+example, in a list '(a, b, c)' if <span class="InlineFormula">pa</span> refers to the <span class="InlineFormula">a</span> and
+<span class="InlineFormula">q</span> refers to the <span class="InlineFormula">c</span>, then the range [<span class="InlineFormula">p</span>, <span class="InlineFormula">q</span>)
+(this is the math notation for a half-open interval, NOT C++)
+refers to
+the sub-list '(a, b)' only.  If <span class="InlineFormula">e</span> refers to the end() of the list
+then [<span class="InlineFormula">p</span>, <span class="InlineFormula">e</span>) indicates the whole list, and [<span class="InlineFormula">q</span>, <span class="InlineFormula">e</span>)
+the items <span class="InlineFormula">(c)</span>.
+<p>
+For many containers we have a range that includes the whole
+container:
+</p><pre>		container.begin()</pre>
+<pre> 		container.end()</pre>
+The above pair encloses the complete container.
+Given a <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> <span class="InlineFormula">c</span>, then
+<span class="InlineFormula">c.begin()</span> and <span class="InlineFormula">c.end()</span> form a <a href="http://csci.csusb.edu/dick/cs202/stl.html#range">range</a>.
+<p>
+Suppose that <span class="InlineFormula">first</span> and <span class="InlineFormula">last</span> form a <a href="http://csci.csusb.edu/dick/cs202/stl.html#range">range</a> and <span class="InlineFormula">it</span> is an iterator
+then:
+</p><pre> 		for( it=first; it != last; it++)</pre>
+will refer to each element in the <a href="http://csci.csusb.edu/dick/cs202/stl.html#range">range</a> [<span class="InlineFormula">first</span>..<span class="InlineFormula">last</span>) in turn.  In
+the body of the for loop
+the value of the element is <span class="InlineFormula">*it</span>.
+<p>
+Here are two examples - one prints a list and the other a vector:
+<br>(<a name="print_list">print_list</a>): 
+</p><pre> void print( list&lt;int&gt; &amp;a)</pre>
+<pre> {</pre>
+<pre> 	for(list&lt;int&gt;::iterator ai=a.begin(); ai!=a.end(); ++ai)</pre>
+<pre> 		cout &lt;&lt; *ai &lt;&lt; " ";</pre>
+<pre> 	cout &lt;&lt; endl;</pre>
+<pre> 	cout &lt;&lt; "----------------"&lt;&lt;endl;</pre>
+<pre> }</pre>
+<br>(<a name="print_vector">print_vector</a>): 
+<pre> void print( vector&lt;int&gt; &amp;a)</pre>
+<pre> {</pre>
+<pre> 	for(vector&lt;int&gt;::iterator ai=a.begin(); ai!=a.end(); ++ai)</pre>
+<pre> 		cout &lt;&lt; *ai &lt;&lt; " ";</pre>
+<pre> 	cout &lt;&lt; endl;</pre>
+<pre> 	cout &lt;&lt; "----------------"&lt;&lt;endl;</pre>
+<pre> }</pre>
+You can see how alike the code for <a href="http://csci.csusb.edu/dick/cs202/stl.html#print_list">print_list</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#print_vector">print_vector</a> are.
+<p>
+</p><h3><a name="Special Iterators">Special Iterators</a></h3>
+If the C++ compiler knows that you don't plan to change the data that
+an iterator refers to then  it can use a more efficient implementations.
+Iterators that can access a sequence of items without changing them
+are called "const iterators".  They have a type like the following:
+<br>(<a name="const_iterator">const_iterator</a>): 
+<pre> 		Container_type::const_iterator</pre>
+All operations on iterators
+work with const_iterators, unless they change the value of the items
+the iterators refer to.  For example if <span class="InlineFormula">p</span> is a const_iterator then
+you can not write '(*p) = something'.  Further 'p-&gt;operation(...)' or
+'(*p).operation(...)' will only compile when the operation is declared
+to not change the object to which it applies.  In other words it must be
+a <span class="InlineFormula">const</span> member function.
+<p>
+An iterator works well for handling existing items in a container.
+It can access and change existing items.  It is
+not designed to add items.
+A normal iterator can work incorrectly if it is used to add
+data to a container before or after the container.
+An inserter is a special kind of iterator that adds new items to
+a container.  The library &lt;iterator&gt; provides three ready made inserters:
+<br>(<a name="inserters">inserters</a>): 
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">
+</th></tr><tr><td>back_inserter(Container&amp; C)
+</td><td>
+[<a href="http://cse.csusb.edu/dick/examples/inserter.cpp"> inserter.cpp </a>]
+</td></tr><tr><td>front_inserter( Container&amp; C)
+</td><td>
+[<a href="http://cse.csusb.edu/dick/examples/front.inserter.cpp"> front.inserter.cpp </a>]
+</td></tr><tr><td>inserter(Container &amp; C, Container_iterator p) (insert before p)
+</td><td><a href="http://csci.csusb.edu/dick/cs202/stl.html#TBA">TBA</a>
+</td></tr></tbody></table><br>(Close Table)<br>
+</p></ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><h2><a name="Pairs">Pairs</a></h2>
+In the library &lt;utility&gt; and included in other standard libraries such
+as &lt;map&gt; there is a class of <span class="InlineFormula">pairs</span> that implement the mathematical idea
+of a Cartesian product.  They are used to constract maps and for other purposes.
+<li><a name="pair">pair</a>::=following
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Purpose</th><th scope="col">Notation</th><th scope="col">Meaning
+</th></tr><tr><td>class name</td><td>pair&lt;X, Y&gt;</td><td>set of pairs (x,y) where x is in class X and y is in class Y.
+</td></tr><tr><td>get first</td><td>pair.first</td><td>the first item in pair
+</td></tr><tr><td>get second item</td><td>pair.second</td><td>the second item in pair
+</td></tr><tr><td>make a new pair</td><td>make_pair(x,y)</td><td>constructs instance of pair&lt;X,Y&gt; with first=x and second=y.
+</td></tr></tbody></table><br>(Close Table)<br>
+<h2><a name="Maps and Sets">Maps and Sets</a></h2>
+A <a href="http://csci.csusb.edu/dick/cs202/stl.html#map">map</a> is a collection of pairs(<a href="http://csci.csusb.edu/dick/cs202/stl.html#Pairs">Pairs</a> above) where for each first element value there is
+no more than one second element.  For example, a map&lt;Name, PhoneNumber&gt;
+can hold data like this make_pair(Name("Dick"), PhoneNumber(5327)).  If this
+record is <span class="InlineFormula">r</span> then <span class="InlineFormula">r</span>.first == Name("Dick) and <span class="InlineFormula">r</span>.second == PhoneNumber(5327).
+The map organizes all the names and numbers so that they can be found quickly
+if you provide a name by using the ordering for Names.
+<p>
+Maps are often used to organize
+information in a table or part of a data base.
+</p><p>
+In the C++ library
+&lt;map&gt; allows you to use a very clever data structure that stores
+pairs of items in it.  If you declare a <span class="InlineFormula">map&lt;A,B&gt;</span> then it will store
+one B value paired with each A value.  Maps give a
+new meaning to the subscript or array index <a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> [].  If
+we have a map&lt;A,B&gt; f then 'f[a]=b' adds a new item to the map that associates 'a' with 'b'.
+We can then recall 'b' as the value <span class="InlineFormula">f[a]</span>.
+</p><p>
+We can test to see if a map has a 'a' like this
+</p><pre> 		if( f.find(a) != f.end() )</pre>
+<p>
+If we declare <span class="InlineFormula">map&lt;A,B&gt; f</span> then for each <span class="InlineFormula">a</span> in <span class="InlineFormula">A</span> we have the paired
+item <span class="InlineFormula">f</span> [ <span class="InlineFormula">a</span> ].  If <span class="InlineFormula">p</span> is an iterator then (*<span class="InlineFormula">p</span>).first will be the A
+in each pair in turn, and (*<span class="InlineFormula">p</span>).second is the associated <span class="InlineFormula">B</span> value.
+</p><p>
+Here is a example
+of a quick and dirty program to help me add up all the scores
+in particular class.  All I have to do is type in
+all the points scored in the class as a sequence of
+names and scores.
+</p><pre> adam 10 eve 15 adam 17 eve  5 eve 5 eve 4 adam 10</pre>
+It prints out a sorted list of names each with their total score:
+<pre> 	#include &lt;string&gt;</pre>
+<pre> 	#include &lt;iostream&gt;</pre>
+<pre> 	#include &lt;map&gt;</pre>
+<pre></pre>
+<pre> 	typedef map&lt;string,int&gt; MSI; //abbreviation: MSI's are sets Mapping Strings to Ints</pre>
+<pre></pre>
+<pre> 	int main()</pre>
+<pre> 	{</pre>
+<pre> 		MSI score;</pre>
+<pre> 		string si;//student id on input</pre>
+<pre> 		int sc;//score for student with id si</pre>
+<pre></pre>
+<pre> 		while( cin&gt;&gt;si&gt;&gt;sc )</pre>
+<pre> 		   score[si] = score[si] + sc;</pre>
+<pre> 		   /* for each si on the input, score[si] is the sum of si's scores.</pre>
+<pre> 		   */</pre>
+<pre></pre>
+<pre> 		for( MSI::iterator p= score.begin(); p!=score.end(); p++)</pre>
+<pre> 			cout &lt;&lt; (*p).first &lt;&lt; "\t" &lt;&lt; (*p).second &lt;&lt;endl;</pre>
+<pre></pre>
+<pre> 	}//main</pre>
+[<a href="http://cse.csusb.edu/dick/cs202/scoring.cpp"> scoring.cpp </a>]
+It would be hard to write a program this simple that gave me equal
+flexibility with out using &lt;map&gt;.
+<p>
+Here
+[<a href="http://csci.csusb.edu/dick/cs202/fibcache.cpp"> fibcache.cpp </a>]
+is a way to use a map to keep values in a recursive function (fibonaci again) from
+re-evaluating the same value more than once.
+</p><p>
+If all you want to do is collect some items together and keep them in order
+you can use the C++ &lt;set&gt; template.  Here is a simple example
+[<a href="http://cse.csusb.edu/dick/cs202/stlset.cpp"> stlset.cpp </a>]
+of using the standard library set to accumulate a set of strings, print them,
+remove one, and print them again.  Seeing that <span class="InlineFormula">set</span> is an ordered set
+of elements you also sort the data as it is stored.
+</p><p>
+If you need to store multiple copies of the same data in a <span class="InlineFormula">map</span> or <span class="InlineFormula">set</span>
+then use <span class="InlineFormula">multimap</span> and <span class="InlineFormula">multiset</span> instead.  They are in the same libraries
+(&lt;map&gt; and &lt;set&gt; respectively) and work almost identically.  However, in
+a <span class="InlineFormula">set</span> each items can appear only once, in a <span class="InlineFormula">multiset</span>  an item can appear
+many times.  Similarly in a <span class="InlineFormula">multimap</span> you can have more than one pair(<span class="InlineFormula">x</span>,<span class="InlineFormula">y</span>)
+with the same <span class="InlineFormula">x</span> value.
+</p><p>
+In general the standard C++ set&lt;<span class="InlineFormula">T</span>&gt;  and map &lt;<span class="InlineFormula">T</span>&gt; only works if you have the
+"&lt;" <a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> defined on data of type <span class="InlineFormula">T</span>.  This is OK for all elementary
+data type and for strings.  If you want <span class="InlineFormula">T</span> to be your own class you
+have to define an <a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> &lt; in the class:
+</p><pre> 		class T{</pre>
+<pre> 			...</pre>
+<pre> 			public:</pre>
+<pre>				bool operator&lt;(T other){.....}</pre>
+<pre> 			...</pre>
+<pre> 		};// class T</pre>
+<p>
+Sets, multisets, and maps store the data in increasing size.  So you can
+easily sort data by inserting it into a multimap (say) and then using
+an iterator to get it out in sorted order.
+</p><p>
+</p><h2><a name="Strings and Streams">Strings and Streams</a></h2>
+The designers of the C++ library made sure that the &lt;string&gt;
+library shares a lot of common features with &lt;vector&gt; and other sequential
+containers.  The main differences are (1) &lt;string&gt;s can only hold
+characters, and (2)&lt;string&gt;s have some useful extra operations available.
+See
+[<a href="http://cse.csusb.edu/dick/cs202/string"> string </a>]
+(text)
+[<a href="http://cse.csusb.edu/dick/cs202/string.html"> string.html </a>]
+(HTML).
+which is a summary of the &lt;string&gt; library.
+<p>
+Similarly input and output streams can be treated
+like containers.  In particular, you can attach an iterator to
+a stream and use read(istream_iterator) or write(ostream_iterator)
+functions on it! Because strings and streams have iterators they can be used as
+sources and targets for many of the algorithms in the &lt;algorithm&gt;
+library. See <a href="http://csci.csusb.edu/dick/cs202/stl.html#Algorithms">Algorithms</a>.
+</p><p>
+</p><h2><a name="Algorithms">Algorithms</a></h2>
+The <a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a> has 60 or more ready-to-use algorithms based on using
+<a href="http://csci.csusb.edu/dick/cs202/stl.html#Iterators">Iterators</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#Ranges">Ranges</a>.  These are often the easiest code and
+fastest solution you could do if you work hard reinventing the wheel.
+For example if you have a type or class of data called <span class="InlineFormula">T</span> and in a
+program are working with a vector <span class="InlineFormula">v</span> of type <span class="InlineFormula">vector&lt;T&gt;</span> and
+the <a href="http://csci.csusb.edu/dick/cs202/stl.html#operator">operator</a> &gt; is defined for T then
+you can sort a <a href="http://csci.csusb.edu/dick/cs202/stl.html#vector">vector</a> v simply by writing:
+<pre>		sort(v.begin(), v.end());</pre>
+Here is a sample of the code:
+<br>(<a name="sort_vector">sort_vector</a>): 
+<pre> //Sorting a vector with 9 integers</pre>
+<pre> #include &lt;iostream&gt;</pre>
+<pre> #include &lt;vector&gt;</pre>
+<pre> #include &lt;algorithm&gt;</pre>
+<pre> void print( vector&lt;int&gt; ) ;//utility function outputs a vector</pre>
+<pre></pre>
+<pre> int main()</pre>
+<pre> {</pre>
+<pre> 	vector&lt;int&gt; a;</pre>
+<pre>  // Place 9,8,7,6,5,4,3,2,1 into the vector</pre>
+<pre> 	for(int i=0; i&lt;9;++i)</pre>
+<pre> 		a.push_back(9-i);// put new element after all the others</pre>
+<pre> 	print(a); // elements of a are (9,8,7,6,5,4,3,2,1)</pre>
+<pre> 	sort( a.begin(), a.end() ); //in the STL &lt;algorithm&gt; library</pre>
+<pre> 	print(a); // elements are now in order.</pre>
+<pre> }</pre>
+Here is a quick list of some simpler algorithms in &lt;algorithm&gt;.  In each
+example the elements processed are in range [<span class="InlineFormula">first</span> .. <span class="InlineFormula">end</span>):
+<br><strong>Table</strong><table border="1"><tbody><tr><th scope="col">Name</th><th scope="col">Arguments</th><th scope="col">Returns</th><th scope="col">Note
+</th></tr><tr><td>for_each</td><td>(first, end, function)</td><td>void</td><td>apply a function to all items in range.
+</td></tr><tr><td>find</td><td>(first, end, value)</td><td>iterator</td><td>find item in range that matches an item.
+</td></tr><tr><td>count</td><td>(first, end, value)</td><td>number</td><td>count matching items in range.
+</td></tr><tr><td>equal</td><td>(first, end, another)</td><td>bool</td><td>true iff all items in two ranges are equal.
+</td></tr><tr><td>transform</td><td>(first, end, function)</td><td>void</td><td> apply transformation to items in range.
+</td></tr><tr><td>copy</td><td>(first, end, another)</td><td>void</td><td>copy one range to another(works between containers of different types!).
+</td></tr><tr><td>reverse</td><td>(first, end)</td><td>void</td><td>reverse items in range.
+</td></tr><tr><td>rotate</td><td>(first, end)</td><td>void</td><td>end of range moved in front of start.
+</td></tr></tbody></table><br>(Close Table)<br>
+<h2><a name="More">More</a></h2>
+These notes only scratch the surface of the <a href="http://csci.csusb.edu/dick/cs202/stl.html#STL">STL</a>.  There are many more ready made
+data structures and algorithms available, See
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#See Also"> See Also </a>]
+below.
+<p>
+Each <a href="http://csci.csusb.edu/dick/cs202/stl.html#instance">instance</a> of a <a href="http://csci.csusb.edu/dick/cs202/stl.html#template">template</a> class is itself a class.  It can be
+used as an element in any of the data structures mentioned here.  Thus
+you can have a vector of lists of ints:
+</p><pre> 		vector &lt; list &lt;int&gt; &gt; vli;</pre>
+or a list of vectors:
+<pre> 		list &lt; vector &lt;int&gt; &gt; lvi;</pre>
+Or even a stack of vectors each containing a number of queues of strings:
+<pre> 		stack&lt; vector &lt; queue &lt; string &gt; &gt; &gt; svqs;</pre>
+<p>
+Be careful however to put a space between the "&gt;"s in declarations like these.
+C++ has a special meaning for the symbol "&gt;&gt;".
+</p><p>
+Here are some of the other ready-to-wear templates:
+</p><ul class="Set">
+<li><span class="Formula">Deques (Double Ended Queues, vectors thta grow at both ends).</span>
+</li><li><span class="Formula">Bitsets, multisets, multimaps, pairs, valarrays, ...</span>
+</li><li><span class="Formula">Reversed iterators.</span>
+</li><li><span class="Formula">Higher order functions that do things to all items in a range in an algorithm,</span>
+</li><li><span class="Formula">Predicates that select items in a range for an algorithm.</span>
+</li></ul>
+<p>
+You can also create your own container classes!
+A Computer Science Data Structures (CS2) class
+like CSUSB's CS330 will teach you how these data structures are
+implemented.  There are some useful resources on the world wide web,
+see
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#See Also"> See Also </a>]
+below.
+</p><h2><a name="Errors">Errors</a></h2><ol class="Section">
+You must always #include headers if you use the words:
+vector, list,string,queue, or stack in your program or
+in a header file.
+<p>
+There must be a space between the two "&gt;" signs below:
+</p><pre> 		stack&lt; vector&lt; T &gt; &gt; svt;</pre>
+<p>
+If a program compiles, loads, crashes, and there is a subscript operator ([...])
+then check to see if the subscripted item has been put into the container
+<span class="InlineFormula">before</span> the subscripted element is accessed.  A very common error is to
+declare a vector with no length and instead of using <a href="http://csci.csusb.edu/dick/cs202/stl.html#push_back">push_back</a> to add
+new items, to use [...] as if it created new elements.  It doesn't.
+</p><p>
+If you are unable to
+show that a subscript is in range then use a condition like the following
+to guard <span class="InlineFormula">thing[i]</span> from errors:
+</p><pre> 		0&lt;= i &amp;&amp; i &lt; thing.size()</pre>
+<p>
+If a program compiles, loads and crashes and it has a <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop_back">pop_back</a>,
+or a <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop_front">pop_front</a> function than make sure that there is an item to
+be "popped"!  In code you can use the <a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a> function to guard statements
+that contain "pop" from blowing up.
+</p><p>
+On our currant compiler you will find that 'at' generates an error.
+Use '[i]' (very carefully) instead!
+</p><p>
+On some older compilers and libraries
+when you need a &lt;string&gt; as well as either &lt;list&gt; or &lt;vector&gt;
+you need to
+</p><pre> 		#include &lt;string&gt;</pre>
+before including the list or vector rather in the
+reverse order!  Older string library appear to
+define some special versions of vector and list operators
+and the older compilers can not make up its mind which to use.
+<p>
+If the standard &lt;list&gt; and &lt;vector&gt; is not found then you are using an older C++
+compiler.
+</p><p>
+On some older C++ libraries you are forced to indicate
+how the stack or queue is implemented whenever you declare one.  You
+write either
+</p><pre> 		stack&lt; vector&lt;T&gt; &gt; s;</pre>
+or
+<pre> 		stack&lt; list&lt;T&gt; &gt; s;</pre>
+or
+<pre> 		queue&lt; list&lt;T&gt; &gt; q;</pre>
+or
+<pre> 		queue&lt; vector&lt;T&gt; &gt; q;</pre>
+If you are forced to do this... lookout for the space between "&gt;" and "&gt;"!
+<p>
+</p></ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#Errors">Errors</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><h2><a name="See Also">See Also</a></h2>
+Here are the parts of C++ standard defining C++ library
+<ul class="Set">
+<li><span class="Formula">Chapter 17: Library introduction [lib.library]</span>
+</li><li><span class="Formula">Chapter 18: Language support library [lib.language.support]</span>
+</li><li><span class="Formula">Chapter 19: Diagnostics library [lib.diagnostics]</span>
+</li><li><span class="Formula">Chapter 20: General utilities library [lib.utilities]</span>
+</li><li><span class="Formula">Chapter 21: Strings library [lib.strings]</span>
+</li><li><span class="Formula">Chapter 22: Localization library [lib.localization]</span>
+</li><li><span class="Formula">Chapter 23: Containers library [lib.containers]</span>
+</li><li><span class="Formula">Chapter 24: Iterators library [lib.iterators]</span>
+</li><li><span class="Formula">Chapter 25: <a href="http://csci.csusb.edu/dick/cs202/stl.html#Algorithms">Algorithms</a> library [lib.algorithms]</span>
+</li><li><span class="Formula">Chapter 26: Numerics library [lib.numerics]</span>
+</li><li><span class="Formula">Chapter 27: Input/output library [lib.input.output]</span>
+</li></ul>
+[<a href="http://cse.csusb.edu/dick/c++std/april/index.html"> index.html </a>]
+for a local copy of an early (1996) draft.  SGI maintain an
+uptodate version:
+[<a href="http://www.sgi.com/Technology/STL/"> http://www.sgi.com/Technology/STL/ </a>]
+<p>
+Also see my notes on the C++ language:
+[<a href="http://cse.csusb.edu/dick/samples/c++.html#STL"> STL in c++ </a>]
+</p></li></ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#The C++ Standard Library">The C++ Standard Library</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><p>
+</p><h1><a name="Notes">Notes</a></h1>
+<br>(<a name="note1">note1</a>): This feature is not available on the Gnu 2.9 C++ that we
+use at CSci CSUSB.
+<br>(<a name="at">at</a>): at(<a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>) is in theory a safer and slower version of subscripting,
+and also a non-operator member function that has some advanced uses.  However,
+many libraries make it fast and unsafe, just like [<a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>].
+<h1><a name="Glossary">Glossary</a></h1>
+<li><a name="associative">associative</a>::=A type of <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> that associates a key with a data item when the data is stored and uses the key to retrieve the item.
+<p>
+</p></li><li><a name="at">at</a>(i)::=an operation that accesses the i'th item in a sequential container as long as i is between 0 and size()-1 inclusive.  In theory v.at(i) differs from v[i] in that i is checked to see if it is in range before the computer attempts to access the item.
+<p>
+</p></li><li><a name="begin">begin</a>::=an operator on a container that returns an <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a> value that refers to the <a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a> item in the container.
+<br></li><li>(<a href="http://csci.csusb.edu/dick/cs202/stl.html#above">above</a>)|-<span class="Formula">for all containers c, c.begin() == &amp; c.front().</span> 
+<p>
+</p></li><li><a name="back">back</a>::=a special item in a <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> that has no items after it.
+The <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a> end() is always the next place after the back item.
+<p>
+</p></li><li><a name="container">container</a>::=A data structure which contains a number of data items that can gain and lose items as the program runs.  Examples include vectors, lists, stacks, ...
+<p>
+</p></li><li><a name="contiguous">contiguous</a>::=a way of implementing data structures so that a continuous block of storage is used and items are found by calculating the address. See <a href="http://csci.csusb.edu/dick/cs202/stl.html#Vectors">Vectors</a>.
+<p>
+</p></li><li><a name="empty">empty</a>::= an operation on a container that returns a bool value that is true when nothing is contained in the container and false otherwise.
+<p>
+</p></li><li><a name="end">end</a>::=an operation on a container that returns an <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a> value.  The <span class="InlineFormula">end()</span> value is a not the <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a> but refers to a nonexistent item <span class="InlineFormula">after</span> the <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a> of the container.
+Compare <a href="http://csci.csusb.edu/dick/cs202/stl.html#NULL">NULL</a>.
+<p>
+</p></li><li><a name="erase">erase</a>::=an operation on sets and lists that removes an element.
+<p>
+</p></li><li><a name="deque">deque</a>::=double ended queue. See <a href="http://csci.csusb.edu/dick/cs202/stl.html#Deques">Deques</a> above.
+<p>
+</p></li><li><a name="deques">deques</a>::word=plural of <a href="http://csci.csusb.edu/dick/cs202/stl.html#deque">deque</a>.
+<p>
+</p></li><li><a name="front">front</a>::=a special item in a <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> that has no other items before it.  The front of a <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> container is referred to by <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a> begin().
+<p>
+</p></li><li><a name="generic">generic</a>::code= a function or class that is a template and can be used for data of many different types depending on its parameters.
+<p>
+</p></li><li><a name="index">index</a>::expression=<span class="InlineFormula">an expression normally written in square brackets that selects one particular value that has been stored in a <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a></span>.
+Vectors and <a href="http://csci.csusb.edu/dick/cs202/stl.html#deques">deques</a> have int <a href="http://csci.csusb.edu/dick/cs202/stl.html#indices">indices</a>, and <a href="http://csci.csusb.edu/dick/cs202/stl.html#maps">maps</a> can have any type of index.
+Some containers do not have indices (sets and lists for example) and we use
+an <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a> in their place.
+<p>
+</p></li><li><a name="indices">indices</a>::word=plural of <a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>.
+<p>
+</p></li><li><a name="increment">increment</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#operation">operation</a>=moving an <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a>/pointer/index on to the next <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a>/pointer/index value commonly symbolized by ++ in C-like languages.
+<p>
+</p></li><li><a name="insert">insert</a>::=an operation on sets and lists that place a new item in the container.
+<p>
+</p></li><li><a name="inserter">inserter</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a>=an iterator that creates a new item in a container every time a value is placed in it. See <a href="http://csci.csusb.edu/dick/cs202/stl.html#Inserters">Inserters</a>.
+<p>
+</p></li><li><a name="instance">instance</a>::=a particular example of a general type, an instance of a template is created by binding the formal arguments to a specific type of data.  For example "list&lt;int&gt;" is an instance of "list".
+<p>
+</p></li><li><a name="iterators">iterators</a>::=plural of <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterator">iterator</a>.
+</li><li><a name="iterator">iterator</a>::=An object that refers to an item in a <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> and used commonly used in for_loops and <a href="http://csci.csusb.edu/dick/cs202/stl.html#generic">generic</a> code.
+Iterators for <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> containers have two special values: <a href="http://csci.csusb.edu/dick/cs202/stl.html#begin">begin</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#end">end</a>.
+<p>
+</p></li><li><a name="length">length</a>::=an operator on a <a href="http://csci.csusb.edu/dick/cs202/stl.html#string">string</a> that returns an int that is the number of characters in the string.  Compare
+with <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a> in other containers.
+<p>
+</p></li><li><a name="linked">linked</a>::=a way of implementing data structures where storage is allocated and deleted as it is needed item by item and the items are linked together by a <a href="http://csci.csusb.edu/dick/cs202/stl.html#pointer">pointer</a>.  For example see <a href="http://csci.csusb.edu/dick/cs202/stl.html#Lists">Lists</a>.
+<p>
+</p></li><li><a name="list">list</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a>=a <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> container that is organized to allow items to be inserted and erased at any point in the container.
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Lists"> Lists </a>]
+<p>
+</p></li><li><a name="map">map</a>::=a <a href="http://csci.csusb.edu/dick/cs202/stl.html#set">set</a> of pairs such that each first item in a pair occurs no more than once.
+<p>
+</p></li><li><a name="maps">maps</a>::word=plural of <a href="http://csci.csusb.edu/dick/cs202/stl.html#map">map</a>.
+<p>
+</p></li><li><a name="multimap">multimap</a>::=a set of pairs where the first elements may repeat.
+<p>
+</p></li><li><a name="NULL">NULL</a>::=the C and C++ standard constant used to indicate that a <a href="http://csci.csusb.edu/dick/cs202/stl.html#pointer">pointer</a> does not contain an address.  In tests this value is converted to the boolean false. It is often used as a sentinel indicating the end of a <a href="http://csci.csusb.edu/dick/cs202/stl.html#linked">linked</a> data structure.
+<p>
+</p></li><li><a name="operation">operation</a>::=something that can be applied to an object to access information in it or to change its state.
+</li><li><a name="operator">operator</a>::=the C++ keyword that indicates the <a href="http://csci.csusb.edu/dick/cs202/stl.html#function">function</a> associated with an operator symbol like: &lt; &gt; = !=, ==, [], (), +, ++, -, --, and so on.
+<p>
+</p></li><li><a name="pair">pair</a>::class=`A simple structure with two public data members called firs and second,  used in <a href="http://csci.csusb.edu/dick/cs202/stl.html#maps">maps</a>.
+</li><li><a name="push">push</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#operation">operation</a>=to add a new item to one or other end of stacks and queues.
+</li><li><a name="push_back">push_back</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#operation">operation</a>=to add a new item at one end of a <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a>.
+</li><li><a name="push_front">push_front</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#operation">operation</a>=to add a new item at one end of some kinds of  <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> containers -- <a href="http://csci.csusb.edu/dick/cs202/stl.html#list">list</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#deque">deque</a>.
+</li><li><a name="pop">pop</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#operation">operation</a>=to remove an item from one or other end of a stack or queue.
+</li><li><a name="pop_back">pop_back</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#operation">operation</a>=to erase an item at one end of a non-<a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a> <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a>.
+</li><li><a name="pop_front">pop_front</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#operation">operation</a>=to erase an item at one end of some kinds of non-<a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a>  <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> containers -- <a href="http://csci.csusb.edu/dick/cs202/stl.html#list">list</a>, <a href="http://csci.csusb.edu/dick/cs202/stl.html#deque">deque</a>.
+<p>
+</p></li><li><a name="pointers">pointers</a>::=plural of <a href="http://csci.csusb.edu/dick/cs202/stl.html#pointer">pointer</a>.
+</li><li><a name="pointer">pointer</a>::=a piece of storage that contains either a <a href="http://csci.csusb.edu/dick/cs202/stl.html#NULL">NULL</a> value or a single address of another piece of storage.
+<p>
+</p></li><li><a name="queue">queue</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a>=a <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> container where <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a> adds data at the <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a> removes data from the <a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a>. See <a href="http://csci.csusb.edu/dick/cs202/stl.html#Queues">Queues</a>.
+A queue is used in simulations and operating systems when items have to be
+stored and their order preserved.
+<p>
+</p></li><li><a name="random_access">random_access</a>::=being able to do things to items in a container in any unpredictable order typically by using an integer as an <a href="http://csci.csusb.edu/dick/cs202/stl.html#index">index</a>.
+<p>
+</p></li><li><a name="range">range</a>::=a pair of <a href="http://csci.csusb.edu/dick/cs202/stl.html#iterators">iterators</a> pointing to items in the same <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> such that a number of steps would move the first iterator to the next one.
+<p>
+</p></li><li><a name="sequential">sequential</a>::=A type of <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> that stores data in a particular order and uses this sequence to access them.
+Sequential containers have a <a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#back">back</a> element and a <a href="http://csci.csusb.edu/dick/cs202/stl.html#size">size</a>.  You can
+<a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a> items into or from a sequential container.
+<p>
+</p></li><li><a name="set">set</a>::=an <a href="http://csci.csusb.edu/dick/cs202/stl.html#associative">associative</a> <a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a> the allows items to be inserted and erased in order efficiently.
+See
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Maps and Sets"> Maps and Sets </a>]
+<p>
+</p></li><li><a name="size">size</a>::=an operator on a container that returns an int that equals the number of elements in the container.
+The back of a sequential container is always the item <a href="http://csci.csusb.edu/dick/cs202/stl.html#at">at</a>(size()-1) not <a href="http://csci.csusb.edu/dick/cs202/stl.html#at">at</a>(size()).
+Compare with <a href="http://csci.csusb.edu/dick/cs202/stl.html#length">length</a> for strings.
+<p>
+</p></li><li><a name="stack">stack</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a>=a <a href="http://csci.csusb.edu/dick/cs202/stl.html#sequential">sequential</a> container where <a href="http://csci.csusb.edu/dick/cs202/stl.html#pop">pop</a> and <a href="http://csci.csusb.edu/dick/cs202/stl.html#push">push</a> both act at the <a href="http://csci.csusb.edu/dick/cs202/stl.html#front">front</a> (called the <a href="http://csci.csusb.edu/dick/cs202/stl.html#top">top</a>) and where only the <a href="http://csci.csusb.edu/dick/cs202/stl.html#top">top</a> item is accessible at any time.
+A Stack is useful when something has to be stored while de do something else
+that might involve saving some more data and so on.  The data is retrieved
+in the reverse order to which it is inserted.
+See <a href="http://csci.csusb.edu/dick/cs202/stl.html#Stacks">Stacks</a>.
+<p>
+</p></li><li><a name="STL">STL</a>::=The Standard Template Library.
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Standard Templates"> Standard Templates </a>]
+<p>
+</p></li><li><a name="TBA">TBA</a>::=To Be Announced -- I'm working on this piece of text.
+<p>
+</p></li><li><a name="template">template</a>::= See <a href="http://cse.csusb.edu/dick/cs202/templates.html">http://cse.csusb.edu/dick/cs202/templates.html</a>
+, notes on templates.
+<p>
+</p></li><li><a name="top">top</a>::=the accessible element in a non-<a href="http://csci.csusb.edu/dick/cs202/stl.html#empty">empty</a> stack is called the top, this element can be popped of the stack.
+<p>
+</p></li><li><a name="vector">vector</a>::<a href="http://csci.csusb.edu/dick/cs202/stl.html#container">container</a>=a vector is a sequential container that is optimized to allow efficient <a href="http://csci.csusb.edu/dick/cs202/stl.html#random_access">random_access</a> of items by using an index.
+Vectors are are allocated in a contiguous block off space.
+Vectors are useful whenever data must be stored in
+one order accessed in a different one.  A vector is
+a dynamic array - an array that can grow when needed.
+[<a href="http://csci.csusb.edu/dick/cs202/stl.html#Vectors"> Vectors </a>]
+<h1><a name="Acknowledgements">Acknowledgements</a></h1>
+Dr. Botting wants to acknowledge the help and advice given by Dr. Zemoudeh
+and Mr. Li Qiu
+with this document.  Whatever errors remain are Dr. Botting's mistakes.
+</li></ol><p>. . . . . . . . . ( end of section <a href="http://csci.csusb.edu/dick/cs202/stl.html#The C++ Standard Library">The C++ Standard Library</a>)  <a href="http://csci.csusb.edu/dick/cs202/stl.html#Contents">&lt;&lt;</a>Contents | End<a href="http://csci.csusb.edu/dick/cs202/stl.html#__End">&gt;&gt;</a>
+</p><h1><a name="Glossary">Glossary</a></h1>
+<li><a name="accessor">accessor</a>::=`A <a href="http://csci.csusb.edu/dick/cs202/stl.html#Function">Function</a> that accesses information in an <a href="http://csci.csusb.edu/dick/cs202/stl.html#object">object</a> with out changing the object in any visible way".
+In C++ this is called a "const function".
+In the <a href="http://csci.csusb.edu/dick/cs202/stl.html#UML">UML</a> it is called a <span class="InlineFormula">query</span>.
+</li><li><a name="Algorithm">Algorithm</a>::=<span class="InlineFormula">A precise description of a series of steps to attain a goal</span>,
+[<a href="http://en.wikipedia.org/wiki/Algorithm"> Algorithm </a>]
+(Wikipedia).
+</li><li><a name="class">class</a>::="A description of a set of similar objects that have similar data plus the functions needed to manipulate the data".
+</li><li><a name="constructor">constructor</a>::="A <a href="http://csci.csusb.edu/dick/cs202/stl.html#Function">Function</a> in a <a href="http://csci.csusb.edu/dick/cs202/stl.html#class">class</a> that creates new <a href="http://csci.csusb.edu/dick/cs202/stl.html#objects">objects</a> in the class".
+</li><li><a name="Data_Structure">Data_Structure</a>::=<span class="InlineFormula">A small data base</span>.
+</li><li><a name="destructor">destructor</a>::=`A <a href="http://csci.csusb.edu/dick/cs202/stl.html#Function">Function</a> that is called when an object is destroyed".
+</li><li><a name="Function">Function</a>::programming=<span class="InlineFormula">A selfcontained and named piece of program that knows how to do something</span>.
+</li><li><a name="Gnu">Gnu</a>::="Gnu's Not Unix", a long running open source project that supplies a
+very popular and free C++ compiler.
+</li><li><a name="mutator">mutator</a>::="A <a href="http://csci.csusb.edu/dick/cs202/stl.html#Function">Function</a> that changes an <a href="http://csci.csusb.edu/dick/cs202/stl.html#object">object</a>".
+</li><li><a name="object">object</a>::="A little bit of knowledge -- some data and some know how". An
+object is instance of a class.
+</li><li><a name="objects">objects</a>::=<span class="InlineFormula">plural of <a href="http://csci.csusb.edu/dick/cs202/stl.html#object">object</a></span>.
+</li><li><a name="OOP">OOP</a>::="Object-Oriented Programming",
+Current paradigm for programming.
+</li><li><a name="Semantics">Semantics</a>::=<span class="InlineFormula">Rules determining the meaning of correct statements in a language</span>.
+</li><li><a name="SP">SP</a>::="Structured Programming",
+a previous paradigm for programming.
+</li><li><a name="STL">STL</a>::="The standard C++ library of classes and functions" -- also called the
+"Standard Template Library" because many of the classes and functions will work
+with any kind of data.
+</li><li><a name="Syntax">Syntax</a>::=<span class="InlineFormula">The rules determining the correctness and structure of statements in a language</span>, grammar.
+</li><li><a name="Q">Q</a>::software="A program I wrote to make software easier to develop",
+</li><li><a name="TBA">TBA</a>::="To Be Announced", something I should do.
+</li><li><a name="TBD">TBD</a>::="To Be Done", something you have to do.
+</li><li><a name="UML">UML</a>::="Unified Modeling Language".
+</li><li><a name="void">void</a>::C++Keyword="Indicates a function that has no return".
+
+<h3><a name="__End">End</a></h3>
+
+</li></body></html>
